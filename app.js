@@ -1,7 +1,9 @@
 const tabsBtn = document.querySelectorAll(".tabs__nav-btn");
 const tabsItems = document.querySelectorAll(".tabs__item");
 
-tabsBtn.forEach(function(item) {
+tabsBtn.forEach(onTabClick);
+
+function onTabClick(item) {
     item.addEventListener("click", function() {
         let currentBtn = item;
         let tabId = currentBtn.getAttribute("data-tab");
@@ -20,4 +22,6 @@ tabsBtn.forEach(function(item) {
             currentTab.classList.add('active');
         } 
     });
-});
+}
+
+document.querySelector('.tabs__nav-btn').click();
